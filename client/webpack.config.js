@@ -34,7 +34,6 @@ module.exports = () => {
         name: "JATE",
         theme_color: "#982eb4",
         background_color: "#ec85ff",
-        display: "standalone",
         start_url: "/",
         publicPath: "/",
         icons: [
@@ -56,7 +55,7 @@ module.exports = () => {
         },
         {
           test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+          exclude: /(node_modules)/,
           use: {
             loader: 'babel-loader',
             options: {
