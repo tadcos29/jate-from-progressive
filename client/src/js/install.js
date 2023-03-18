@@ -15,16 +15,16 @@ butInstall.addEventListener('click', async () => {
         
         let promptOutcome = await installSelected.prompt();
         if (promptOutcome.outcome=='accepted') {
-            butInstall.textContent = 'Installing...';
+            butInstall.textContent = 'Installed';
         }
     }
 });
 
 // modify the button once installed by changing opacity and disabling it
 window.addEventListener('appinstalled', (event) => {
-    butInstall.textContent = 'Installed!';
     butInstall.disabled = true;
     butInstall.style.opacity = '0.5';
+    butInstall.textContent = 'Installed!';
     console.log('Installed.');
     console.log(event);
     installSelected=null;
