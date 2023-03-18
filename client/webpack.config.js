@@ -34,7 +34,7 @@ module.exports = () => {
         name: "JATE",
         theme_color: "#982eb4",
         background_color: "#ec85ff",
-        display: "browser",
+        display: "standalone",
         scope: "./",
         start_url: "./",
         icons: [
