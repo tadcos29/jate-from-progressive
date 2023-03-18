@@ -12,8 +12,9 @@ window.addEventListener('beforeinstallprompt', (event) => {
 // collect the propagated event from the beforeinstallprompt listener; if it exist, install
 butInstall.addEventListener('click', async () => {
     if (installSelected) {
+        
         let promptOutcome = await installSelected.prompt();
-        if (promptOutcome) {
+        if (promptOutcome.outcome=='accepted') {
             butInstall.textContent = 'Installing...';
         }
     }

@@ -29,6 +29,7 @@ module.exports = () => {
         swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
+        fingerprints:false,
         inject: true, 
         name: "JATE",
         theme_color: "#982eb4",
@@ -36,7 +37,6 @@ module.exports = () => {
         display: "browser",
         scope: "./",
         start_url: "./",
-        publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
