@@ -19,10 +19,11 @@ butInstall.addEventListener('click', async () => {
     }
 });
 
-// modify the button once installed. Might change opacity here
+// modify the button once installed. Might change opacity here instead, or use disable
 window.addEventListener('appinstalled', (event) => {
     butInstall.textContent = 'Installed!';
-    butInstall.classList.toggle('hidden', true);
+    butInstall.disabled = true;
+    butInstall.style.opacity = '0.5';
     console.log('Installed.');
     console.log(event);
     installSelected=null;
