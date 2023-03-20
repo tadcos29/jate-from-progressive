@@ -29,6 +29,11 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 
 registerRoute(
+
+  // If the content requested is css, script, or service worker,
+  // use StaleWhileRevalidate to determine whether the content is outdated
+  // as per the maxAge value, and refresh if required
+
   ({ request }) => request.destination === 'style' || request.destination === 'script' || request.destination === 'worker',
   new StaleWhileRevalidate({
     cacheName: 'script-cache',
